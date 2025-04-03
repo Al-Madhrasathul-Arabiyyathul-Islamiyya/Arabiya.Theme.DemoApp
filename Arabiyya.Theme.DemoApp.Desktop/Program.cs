@@ -1,5 +1,4 @@
-﻿using System;
-using Arabiyya.Theme.ThemeServices;
+﻿using Arabiyya.Theme.ThemeServices;
 using Avalonia;
 
 namespace Arabiyya.Theme.DemoApp.Desktop;

@@ -1,5 +1,4 @@
-﻿using System;
-using Arabiyya.Theme.DemoApp.ViewModels;
+﻿using Arabiyya.Theme.DemoApp.ViewModels;
 using Avalonia.Controls;
 using Microsoft.Extensions.DependencyInjection;
 

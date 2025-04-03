@@ -8,9 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Arabiyya.Theme.DemoApp.ViewModels;
 public partial class MainViewModel : ObservableObject
 {
-    private readonly INavigationService? _navigationService;
+    private readonly INavigationService _navigationService;
 
-    public INavigationService? NavigationService => _navigationService;
+    public INavigationService NavigationService => _navigationService;
 
     public MainViewModel()
     {
