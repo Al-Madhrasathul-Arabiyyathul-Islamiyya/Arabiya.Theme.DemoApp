@@ -1,0 +1,6 @@
+[submodule "Arabiyya.Theme"]
+	path = Arabiyya.Theme
+	url = git@github.com:Al-Madhrasathul-Arabiyyathul-Islamiyya/Arabiyya.Theme.git
+[submodule "AvaGlass"]
+	path = AvaGlass
+	url = git@github.com:Al-Madhrasathul-Arabiyyathul-Islamiyya/AvaGlass.git
