@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Arabiyya.Theme.DemoApp.ViewModels;
-public abstract class ViewModelBase : ObservableObject
+public partial class TextInputsViewModel : ObservableObject
 {
+    public TextInputsViewModel() { }
 }
