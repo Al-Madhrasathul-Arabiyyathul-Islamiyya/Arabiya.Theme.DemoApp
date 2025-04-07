@@ -1,7 +1,8 @@
 ﻿using Arabiyya.Theme.DemoApp.ViewModels;
 using Arabiyya.Theme.DemoApp.Views;
+using Arabiyya.Theme.Navigation.Core.Services;
 using Arabiyya.Theme.Navigation.Extensions;
-using Arabiyya.Theme.Navigation.Services;
+using Arabiyya.Theme.Navigation.Interfaces;
 using Arabiyya.Theme.ThemeServices;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
