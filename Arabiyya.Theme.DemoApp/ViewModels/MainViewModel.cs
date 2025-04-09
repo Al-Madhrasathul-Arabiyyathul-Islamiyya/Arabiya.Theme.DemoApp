@@ -1,6 +1,6 @@
 ﻿using Arabiyya.Theme.DemoApp.Views;
+using Arabiyya.Theme.Navigation.Core.Models;
 using Arabiyya.Theme.Navigation.Core.Services;
-using Arabiyya.Theme.Navigation.Models;
 using Arabiyya.Theme.Navigation.Services;
 using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -43,20 +43,17 @@ public partial class MainViewModel : ObservableObject
 
     public MainViewModel(ServiceProvider serviceProvider)
     {
-        // Get the navigation service
         _navigationService = serviceProvider.GetRequiredService<INavigationService>();
 
-        // Configure navigation
         var config = new NavigationConfig
         {
             Title = "Theme Demo",
-            NavigationMode = NavigationMode.Sidebar,
             UseGlassEffect = true,
             ShowIcons = true,
-            AllowCollapse = true
+            AllowCollapse = true,
+            IsExpanded = true
         };
 
-        // Add navigation items
         config.Items.Add(new NavigationItem("colors", "Color Palette", "\uE6C8", typeof(ColorPaletteView)));
         config.Items.Add(new NavigationItem("typography", "Typography", "\uE6EE", typeof(TypographyView)));
         config.Items.Add(new NavigationItem("buttons", "Buttons", "\uE5A2", typeof(ButtonsView)));
@@ -68,7 +65,6 @@ public partial class MainViewModel : ObservableObject
         config.Items.Add(new NavigationItem("cards", "Cards", "\uE2C8", typeof(CardsView)));
         config.Items.Add(new NavigationItem("glasscards", "Glass Cards", "\uE2C8", typeof(GlassCardsView)));
 
-        // Initialize navigation
         _navigationService.Initialize(config);
     }
 }

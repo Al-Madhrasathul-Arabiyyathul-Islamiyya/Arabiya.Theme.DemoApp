@@ -1,45 +1,77 @@
 <UserControl
-    d:DesignHeight="1366"
-    d:DesignWidth="768"
-    mc:Ignorable="d"
-    x:Class="Arabiyya.Theme.DemoApp.Views.MainView"
-    x:DataType="vm:MainViewModel"
-    xmlns="https://github.com/avaloniaui"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:nav="using:Arabiyya.Theme.Navigation.Controls"
-    xmlns:sw="using:Arabiyya.Theme.Switcher"
-    xmlns:vm="using:Arabiyya.Theme.DemoApp.ViewModels"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Design.DataContext>
-        <vm:MainViewModel />
-    </Design.DataContext>
+  x:Class="Arabiyya.Theme.DemoApp.Views.MainView"
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:avaglass="using:AvaGlass.Controls"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:nav="using:Arabiyya.Theme.Navigation.Controls"
+  xmlns:sw="using:Arabiyya.Theme.Switcher"
+  xmlns:vm="using:Arabiyya.Theme.DemoApp.ViewModels"
+  d:DesignHeight="1366"
+  d:DesignWidth="768"
+  x:DataType="vm:MainViewModel"
+  mc:Ignorable="d">
+  <Design.DataContext>
+    <vm:MainViewModel />
+  </Design.DataContext>
 
-    <Grid ColumnDefinitions="10,Auto,*,10" RowDefinitions="10,*,10">
-        <!--  Sidebar Navigation  -->
+  <Grid ColumnDefinitions="10,Auto,*,10" RowDefinitions="10,*,10">
+    <avaglass:GlassmorphicPanel
+      Grid.Row="1"
+      Grid.Column="1"
+      Padding="4,0"
+      BlurRadius="20"
+      CornerRadius="8"
+      TintColor="White"
+      TintOpacity="0.2">
+
+      <Grid RowDefinitions="Auto,*,Auto">
+        <!--  Header with title and toggle button  -->
         <Border
-            Background="Transparent"
-            Grid.Column="1"
-            Grid.Row="1">
-            <Grid RowDefinitions="*,Auto">
-                <nav:SideNav
-                    Config="{Binding NavigationService.Config}"
-                    NavigationService="{Binding NavigationService}"
-                    ShowIcons="True"
-                    ShowLabels="True"
-                    VerticalAlignment="Stretch" />
-                <Panel Grid.Row="1" Margin="10">
-                    <sw:ThemeSwitcher VariantType="IconButton" />
-                </Panel>
-            </Grid>
+          Grid.Row="0"
+          Padding="16"
+          BorderBrush="#20FFFFFF"
+          BorderThickness="0,0,0,1">
+          <Grid ColumnDefinitions="*,Auto">
+            <TextBlock Classes="h4" Text="Theme Demo" />
+
+            <!--  Toggle Button for sidebar expansion  -->
+            <nav:NavigationToggleButton Grid.Column="1" Target="{Binding NavigationService.Config}" />
+          </Grid>
         </Border>
 
-        <!--  Content Area  -->
-        <nav:NavigationHost
-            Grid.Column="2"
-            Grid.Row="1"
-            Margin="4,20,0,0"
-            NavigationService="{Binding NavigationService}"
-            TransitionType="fade" />
-    </Grid>
+        <!--  Navigation List  -->
+        <nav:NavigationListBox
+          Grid.Row="1"
+          Margin="0,8"
+          Navigator="{Binding NavigationService}"
+          ShowIcons="True"
+          ShowLabels="{Binding NavigationService.Config.IsExpanded}">
+          <nav:NavigationListBox.ItemTemplate>
+            <DataTemplate>
+              <TextBlock Text="Test" Margin="8" Foreground="White" />
+            </DataTemplate>
+          </nav:NavigationListBox.ItemTemplate> 
+        </nav:NavigationListBox>
+
+        <!--  Footer with theme switcher  -->
+        <Border
+          Grid.Row="2"
+          Padding="16"
+          BorderBrush="#20FFFFFF"
+          BorderThickness="0,1,0,0">
+          <sw:ThemeSwitcher VariantType="IconButton" />
+        </Border>
+      </Grid>
+    </avaglass:GlassmorphicPanel>
+
+    <!--  Content Area  -->
+    <nav:NavigationHost
+      Grid.Row="1"
+      Grid.Column="2"
+      Margin="4,20,0,0"
+      Navigator="{Binding NavigationService}"
+      TransitionType="fade" />
+  </Grid>
 </UserControl>

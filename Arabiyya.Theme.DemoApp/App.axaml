@@ -1,15 +1,18 @@
 <Application
-  x:Class="Arabiyya.Theme.DemoApp.App"
-  xmlns="https://github.com/avaloniaui"
-  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-  RequestedThemeVariant="Default">
+    RequestedThemeVariant="Default"
+    x:Class="Arabiyya.Theme.DemoApp.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:controls="clr-namespace:Arabiyya.Theme.Navigation.Controls;assembly=Arabiyya.Theme"
+    xmlns:models="clr-namespace:Arabiyya.Theme.Navigation.Core.Models;assembly=Arabiyya.Theme"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-  <Application.Styles>
-    <FluentTheme />
-    <StyleInclude Source="avares://Arabiyya.Theme/Theme.axaml" />
-  </Application.Styles>
+    <Application.Styles>
+        <FluentTheme />
+        <StyleInclude Source="avares://Arabiyya.Theme/Theme.axaml" />
+    </Application.Styles>
 
-  <Application.Resources>
-    <x:Boolean x:Key="IsDarkTheme">false</x:Boolean>
-  </Application.Resources>
+    <Application.Resources>
+        <x:Boolean x:Key="IsDarkTheme">false</x:Boolean>
+    </Application.Resources>
+
 </Application>
