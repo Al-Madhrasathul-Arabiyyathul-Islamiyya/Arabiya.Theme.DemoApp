@@ -1,7 +1,6 @@
 ﻿using Arabiyya.Theme.DemoApp.Views;
 using Arabiyya.Theme.Navigation.Core.Models;
 using Arabiyya.Theme.Navigation.Core.Services;
-using Arabiyya.Theme.Navigation.Services;
 using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.Extensions.DependencyInjection;
